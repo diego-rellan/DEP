@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Mar 24 18:50:42 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : megafuncionesejemplos
+Top-level Entity Name : megafuncionesejemplos
+Family : Cyclone II
+Total logic elements : 28
+    Total combinational functions : 28
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

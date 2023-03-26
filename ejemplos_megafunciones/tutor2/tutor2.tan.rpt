@@ -1,0 +1,562 @@
+Classic Timing Analyzer report for tutor2
+Fri Jan 24 19:09:10 2014
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'CLK_48Mhz'
+  6. Clock Setup: 'SW0_PULSE'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                                                                         ;
++------------------------------+-------+---------------+------------------------------------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------+-----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                                                                                   ; To                                                                                     ; From Clock ; To Clock  ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------+-----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.214 ns                                       ; KEY3_ACLR                                                                              ; LCD_Display:inst1|CLK_COUNT_400HZ[0]                                                   ; --         ; CLK_48Mhz ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.734 ns                                      ; LCD_Display:inst1|DATA_BUS_VALUE[0]                                                    ; DATA_BUS[0]                                                                            ; CLK_48Mhz  ; --        ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.609 ns                                      ; KEY3_ACLR                                                                              ; LCD_Display:inst1|CHAR_COUNT[1]                                                        ; --         ; CLK_48Mhz ; 0            ;
+; Clock Setup: 'CLK_48Mhz'     ; N/A   ; None          ; 238.66 MHz ( period = 4.190 ns )               ; LCD_Display:inst1|CHAR_COUNT[0]                                                        ; LCD_Display:inst1|DATA_BUS_VALUE[6]                                                    ; CLK_48Mhz  ; CLK_48Mhz ; 0            ;
+; Clock Setup: 'SW0_PULSE'     ; N/A   ; None          ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                                                                                        ;                                                                                        ;            ;           ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------+-----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; Off                ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK_48Mhz       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; SW0_PULSE       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK_48Mhz'                                                                                                                                                                                                                                                                   ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------------+---------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                  ; To                                    ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------------+---------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 238.66 MHz ( period = 4.190 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[6]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.976 ns                ;
+; N/A                                     ; 238.89 MHz ( period = 4.186 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.972 ns                ;
+; N/A                                     ; 240.85 MHz ( period = 4.152 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[3]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.938 ns                ;
+; N/A                                     ; 245.16 MHz ( period = 4.079 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[6]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.865 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.861 ns                ;
+; N/A                                     ; 247.46 MHz ( period = 4.041 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[3]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.827 ns                ;
+; N/A                                     ; 250.94 MHz ( period = 3.985 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[0]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.771 ns                ;
+; N/A                                     ; 254.13 MHz ( period = 3.935 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[1]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.721 ns                ;
+; N/A                                     ; 254.19 MHz ( period = 3.934 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[6]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.720 ns                ;
+; N/A                                     ; 254.45 MHz ( period = 3.930 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.716 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 255.17 MHz ( period = 3.919 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.705 ns                ;
+; N/A                                     ; 256.02 MHz ( period = 3.906 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[1]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.692 ns                ;
+; N/A                                     ; 256.15 MHz ( period = 3.904 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.690 ns                ;
+; N/A                                     ; 256.67 MHz ( period = 3.896 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[3]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.682 ns                ;
+; N/A                                     ; 258.13 MHz ( period = 3.874 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[0]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.660 ns                ;
+; N/A                                     ; 258.67 MHz ( period = 3.866 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[6]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.652 ns                ;
+; N/A                                     ; 258.93 MHz ( period = 3.862 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.648 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 259.61 MHz ( period = 3.852 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 263.64 MHz ( period = 3.793 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.579 ns                ;
+; N/A                                     ; 264.55 MHz ( period = 3.780 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[1]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.566 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 264.83 MHz ( period = 3.776 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.562 ns                ;
+; N/A                                     ; 267.09 MHz ( period = 3.744 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[1]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.530 ns                ;
+; N/A                                     ; 267.45 MHz ( period = 3.739 ns )                    ; LCD_Display:inst1|CHAR_COUNT[0]       ; LCD_Display:inst1|DATA_BUS_VALUE[2]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.525 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.524 ns                ;
+; N/A                                     ; 268.17 MHz ( period = 3.729 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[0]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.515 ns                ;
+; N/A                                     ; 269.11 MHz ( period = 3.716 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[6]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.502 ns                ;
+; N/A                                     ; 269.40 MHz ( period = 3.712 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 270.27 MHz ( period = 3.700 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[3]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.486 ns                ;
+; N/A                                     ; 271.08 MHz ( period = 3.689 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[2]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.475 ns                ;
+; N/A                                     ; 271.89 MHz ( period = 3.678 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[3]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.464 ns                ;
+; N/A                                     ; 272.41 MHz ( period = 3.671 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[2]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.457 ns                ;
+; N/A                                     ; 273.15 MHz ( period = 3.661 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[0]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.447 ns                ;
+; N/A                                     ; 274.12 MHz ( period = 3.648 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.434 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 275.10 MHz ( period = 3.635 ns )                    ; LCD_Display:inst1|CHAR_COUNT[3]       ; LCD_Display:inst1|DATA_BUS_VALUE[1]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.421 ns                ;
+; N/A                                     ; 275.63 MHz ( period = 3.628 ns )                    ; LCD_Display:inst1|CHAR_COUNT[1]       ; LCD_Display:inst1|DATA_BUS_VALUE[2]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.414 ns                ;
+; N/A                                     ; 279.33 MHz ( period = 3.580 ns )                    ; LCD_Display:inst1|CHAR_COUNT[2]       ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.366 ns                ;
+; N/A                                     ; 282.81 MHz ( period = 3.536 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.788 ns                ;
+; N/A                                     ; 284.82 MHz ( period = 3.511 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[0]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.297 ns                ;
+; N/A                                     ; 285.88 MHz ( period = 3.498 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[2]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.284 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 286.37 MHz ( period = 3.492 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.276 ns                ;
+; N/A                                     ; 288.27 MHz ( period = 3.469 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.721 ns                ;
+; N/A                                     ; 291.55 MHz ( period = 3.430 ns )                    ; LCD_Display:inst1|CHAR_COUNT[4]       ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.216 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 291.97 MHz ( period = 3.425 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.209 ns                ;
+; N/A                                     ; 294.72 MHz ( period = 3.393 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.645 ns                ;
+; N/A                                     ; 298.06 MHz ( period = 3.355 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.607 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 301.75 MHz ( period = 3.314 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.102 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 302.02 MHz ( period = 3.311 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.095 ns                ;
+; N/A                                     ; 304.04 MHz ( period = 3.289 ns )                    ; LCD_Display:inst1|state.DISPLAY_OFF   ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.076 ns                ;
+; N/A                                     ; 306.47 MHz ( period = 3.263 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.515 ns                ;
+; N/A                                     ; 306.94 MHz ( period = 3.258 ns )                    ; LCD_Display:inst1|state.DISPLAY_OFF   ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.045 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 309.12 MHz ( period = 3.235 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.023 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.46 MHz ( period = 3.221 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 310.66 MHz ( period = 3.219 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 3.003 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 313.77 MHz ( period = 3.187 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.975 ns                ;
+; N/A                                     ; 315.36 MHz ( period = 3.171 ns )                    ; LCD_Display:inst1|state.MODE_SET      ; LCD_Display:inst1|DATA_BUS_VALUE[5]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.958 ns                ;
+; N/A                                     ; 318.47 MHz ( period = 3.140 ns )                    ; LCD_Display:inst1|state.MODE_SET      ; LCD_Display:inst1|DATA_BUS_VALUE[4]   ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.927 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 323.00 MHz ( period = 3.096 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.884 ns                ;
+; N/A                                     ; 327.98 MHz ( period = 3.049 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.837 ns                ;
+; N/A                                     ; 327.98 MHz ( period = 3.049 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.837 ns                ;
+; N/A                                     ; 327.98 MHz ( period = 3.049 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.837 ns                ;
+; N/A                                     ; 327.98 MHz ( period = 3.049 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.837 ns                ;
+; N/A                                     ; 327.98 MHz ( period = 3.049 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.837 ns                ;
+; N/A                                     ; 327.98 MHz ( period = 3.049 ns )                    ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz  ; CLK_48Mhz ; None                        ; None                      ; 2.837 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                       ;                                       ;            ;           ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------------+---------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'SW0_PULSE'                                                                                                                                                                                                                                                                                                                              ;
++-------+------------------------------------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                                                                   ; To                                                                                     ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.747 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.676 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.652 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.605 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.581 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.534 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.530 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.510 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.463 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.459 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.439 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.424 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.392 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.390 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.388 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.368 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.353 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.319 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.317 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.297 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.282 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.275 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.248 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.248 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.246 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.233 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.211 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 1.204 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[6] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.862 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[4] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.862 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[2] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.860 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.847 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[3] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.828 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[1] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.822 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[5] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.821 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7] ; SW0_PULSE  ; SW0_PULSE ; None                        ; None                      ; 0.550 ns                ;
++-------+------------------------------------------------+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; tsu                                                                                               ;
++-------+--------------+------------+-----------+---------------------------------------+-----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                                    ; To Clock  ;
++-------+--------------+------------+-----------+---------------------------------------+-----------+
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz ;
+; N/A   ; None         ; 6.214 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz ;
+; N/A   ; None         ; 5.809 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz ;
+; N/A   ; None         ; 5.787 ns   ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz ;
+; N/A   ; None         ; 2.839 ns   ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[3]       ; CLK_48Mhz ;
+; N/A   ; None         ; 2.839 ns   ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[4]       ; CLK_48Mhz ;
+; N/A   ; None         ; 2.839 ns   ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[0]       ; CLK_48Mhz ;
+; N/A   ; None         ; 2.839 ns   ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[2]       ; CLK_48Mhz ;
+; N/A   ; None         ; 2.839 ns   ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[1]       ; CLK_48Mhz ;
++-------+--------------+------------+-----------+---------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------+
+; tco                                                                                                ;
++-------+--------------+------------+-------------------------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                ; To          ; From Clock ;
++-------+--------------+------------+-------------------------------------+-------------+------------+
+; N/A   ; None         ; 11.734 ns  ; LCD_Display:inst1|DATA_BUS_VALUE[0] ; DATA_BUS[0] ; CLK_48Mhz  ;
+; N/A   ; None         ; 11.725 ns  ; LCD_Display:inst1|DATA_BUS_VALUE[3] ; DATA_BUS[3] ; CLK_48Mhz  ;
+; N/A   ; None         ; 11.694 ns  ; LCD_Display:inst1|DATA_BUS_VALUE[2] ; DATA_BUS[2] ; CLK_48Mhz  ;
+; N/A   ; None         ; 11.189 ns  ; LCD_Display:inst1|DATA_BUS_VALUE[1] ; DATA_BUS[1] ; CLK_48Mhz  ;
+; N/A   ; None         ; 11.135 ns  ; LCD_Display:inst1|DATA_BUS_VALUE[6] ; DATA_BUS[6] ; CLK_48Mhz  ;
+; N/A   ; None         ; 11.037 ns  ; LCD_Display:inst1|LCD_E             ; LCD_E       ; CLK_48Mhz  ;
+; N/A   ; None         ; 10.697 ns  ; LCD_Display:inst1|DATA_BUS_VALUE[5] ; DATA_BUS[5] ; CLK_48Mhz  ;
+; N/A   ; None         ; 10.445 ns  ; LCD_Display:inst1|LCD_RW_INT        ; LCD_RW      ; CLK_48Mhz  ;
+; N/A   ; None         ; 10.413 ns  ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[7] ; CLK_48Mhz  ;
+; N/A   ; None         ; 10.407 ns  ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[0] ; CLK_48Mhz  ;
+; N/A   ; None         ; 10.407 ns  ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[1] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.994 ns   ; LCD_Display:inst1|DATA_BUS_VALUE[4] ; DATA_BUS[4] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.924 ns   ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[2] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.924 ns   ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[3] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.924 ns   ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[6] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.914 ns   ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[5] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.904 ns   ; LCD_Display:inst1|LCD_RW_INT        ; DATA_BUS[4] ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.783 ns   ; LCD_Display:inst1|LCD_RS            ; LCD_RS      ; CLK_48Mhz  ;
+; N/A   ; None         ; 9.630 ns   ; LCD_Display:inst1|DATA_BUS_VALUE[7] ; DATA_BUS[7] ; CLK_48Mhz  ;
++-------+--------------+------------+-------------------------------------+-------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; th                                                                                                      ;
++---------------+-------------+-----------+-----------+---------------------------------------+-----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                                    ; To Clock  ;
++---------------+-------------+-----------+-----------+---------------------------------------+-----------+
+; N/A           ; None        ; -2.609 ns ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[3]       ; CLK_48Mhz ;
+; N/A           ; None        ; -2.609 ns ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[4]       ; CLK_48Mhz ;
+; N/A           ; None        ; -2.609 ns ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[0]       ; CLK_48Mhz ;
+; N/A           ; None        ; -2.609 ns ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[2]       ; CLK_48Mhz ;
+; N/A           ; None        ; -2.609 ns ; KEY3_ACLR ; LCD_Display:inst1|CHAR_COUNT[1]       ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[15] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[13] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[14] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[12] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[11] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[10] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[18] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[19] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[17] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.557 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[16] ; CLK_48Mhz ;
+; N/A           ; None        ; -5.579 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_400HZ           ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[9]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[6]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[8]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[7]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[5]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[4]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[3]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[2]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[1]  ; CLK_48Mhz ;
+; N/A           ; None        ; -5.984 ns ; KEY3_ACLR ; LCD_Display:inst1|CLK_COUNT_400HZ[0]  ; CLK_48Mhz ;
++---------------+-------------+-----------+-----------+---------------------------------------+-----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Fri Jan 24 19:09:09 2014
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off mitutor2 -c tutor2 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK_48Mhz" is an undefined clock
+    Info: Assuming node "SW0_PULSE" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "LCD_Display:inst1|CLK_400HZ" as buffer
+Info: Clock "CLK_48Mhz" has Internal fmax of 238.66 MHz between source register "LCD_Display:inst1|CHAR_COUNT[0]" and destination register "LCD_Display:inst1|DATA_BUS_VALUE[6]" (period= 4.19 ns)
+    Info: + Longest register to register delay is 3.976 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X48_Y25_N21; Fanout = 17; REG Node = 'LCD_Display:inst1|CHAR_COUNT[0]'
+        Info: 2: + IC(0.741 ns) + CELL(0.275 ns) = 1.016 ns; Loc. = LCCOMB_X47_Y25_N2; Fanout = 1; COMB Node = 'LCD_Display:inst1|Mux5~372'
+        Info: 3: + IC(0.457 ns) + CELL(0.438 ns) = 1.911 ns; Loc. = LCCOMB_X48_Y25_N8; Fanout = 5; COMB Node = 'LCD_Display:inst1|Mux5~374'
+        Info: 4: + IC(0.271 ns) + CELL(0.420 ns) = 2.602 ns; Loc. = LCCOMB_X48_Y25_N14; Fanout = 4; COMB Node = 'LCD_Display:inst1|LessThan1~119'
+        Info: 5: + IC(0.740 ns) + CELL(0.150 ns) = 3.492 ns; Loc. = LCCOMB_X46_Y25_N2; Fanout = 1; COMB Node = 'LCD_Display:inst1|Selector3~164'
+        Info: 6: + IC(0.250 ns) + CELL(0.150 ns) = 3.892 ns; Loc. = LCCOMB_X46_Y25_N16; Fanout = 1; COMB Node = 'LCD_Display:inst1|Selector3~165'
+        Info: 7: + IC(0.000 ns) + CELL(0.084 ns) = 3.976 ns; Loc. = LCFF_X46_Y25_N17; Fanout = 2; REG Node = 'LCD_Display:inst1|DATA_BUS_VALUE[6]'
+        Info: Total cell delay = 1.517 ns ( 38.15 % )
+        Info: Total interconnect delay = 2.459 ns ( 61.85 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "CLK_48Mhz" to destination register is 4.746 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'CLK_48Mhz'
+            Info: 2: + IC(0.611 ns) + CELL(0.787 ns) = 2.397 ns; Loc. = LCFF_X1_Y17_N1; Fanout = 2; REG Node = 'LCD_Display:inst1|CLK_400HZ'
+            Info: 3: + IC(0.805 ns) + CELL(0.000 ns) = 3.202 ns; Loc. = CLKCTRL_G3; Fanout = 39; COMB Node = 'LCD_Display:inst1|CLK_400HZ~clkctrl'
+            Info: 4: + IC(1.007 ns) + CELL(0.537 ns) = 4.746 ns; Loc. = LCFF_X46_Y25_N17; Fanout = 2; REG Node = 'LCD_Display:inst1|DATA_BUS_VALUE[6]'
+            Info: Total cell delay = 2.323 ns ( 48.95 % )
+            Info: Total interconnect delay = 2.423 ns ( 51.05 % )
+        Info: - Longest clock path from clock "CLK_48Mhz" to source register is 4.746 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'CLK_48Mhz'
+            Info: 2: + IC(0.611 ns) + CELL(0.787 ns) = 2.397 ns; Loc. = LCFF_X1_Y17_N1; Fanout = 2; REG Node = 'LCD_Display:inst1|CLK_400HZ'
+            Info: 3: + IC(0.805 ns) + CELL(0.000 ns) = 3.202 ns; Loc. = CLKCTRL_G3; Fanout = 39; COMB Node = 'LCD_Display:inst1|CLK_400HZ~clkctrl'
+            Info: 4: + IC(1.007 ns) + CELL(0.537 ns) = 4.746 ns; Loc. = LCFF_X48_Y25_N21; Fanout = 17; REG Node = 'LCD_Display:inst1|CHAR_COUNT[0]'
+            Info: Total cell delay = 2.323 ns ( 48.95 % )
+            Info: Total interconnect delay = 2.423 ns ( 51.05 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: Clock "SW0_PULSE" Internal fmax is restricted to 420.17 MHz between source register "lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0]" and destination register "lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7]"
+    Info: fmax restricted to clock pin edge rate 2.38 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.747 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X47_Y25_N13; Fanout = 3; REG Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0]'
+            Info: 2: + IC(0.325 ns) + CELL(0.414 ns) = 0.739 ns; Loc. = LCCOMB_X47_Y25_N12; Fanout = 2; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita0~COUT'
+            Info: 3: + IC(0.000 ns) + CELL(0.159 ns) = 0.898 ns; Loc. = LCCOMB_X47_Y25_N14; Fanout = 2; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita1~COUT'
+            Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 0.969 ns; Loc. = LCCOMB_X47_Y25_N16; Fanout = 2; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita2~COUT'
+            Info: 5: + IC(0.000 ns) + CELL(0.071 ns) = 1.040 ns; Loc. = LCCOMB_X47_Y25_N18; Fanout = 2; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita3~COUT'
+            Info: 6: + IC(0.000 ns) + CELL(0.071 ns) = 1.111 ns; Loc. = LCCOMB_X47_Y25_N20; Fanout = 2; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita4~COUT'
+            Info: 7: + IC(0.000 ns) + CELL(0.071 ns) = 1.182 ns; Loc. = LCCOMB_X47_Y25_N22; Fanout = 2; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita5~COUT'
+            Info: 8: + IC(0.000 ns) + CELL(0.071 ns) = 1.253 ns; Loc. = LCCOMB_X47_Y25_N24; Fanout = 1; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita6~COUT'
+            Info: 9: + IC(0.000 ns) + CELL(0.410 ns) = 1.663 ns; Loc. = LCCOMB_X47_Y25_N26; Fanout = 1; COMB Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|counter_comb_bita7'
+            Info: 10: + IC(0.000 ns) + CELL(0.084 ns) = 1.747 ns; Loc. = LCFF_X47_Y25_N27; Fanout = 3; REG Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7]'
+            Info: Total cell delay = 1.422 ns ( 81.40 % )
+            Info: Total interconnect delay = 0.325 ns ( 18.60 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "SW0_PULSE" to destination register is 2.646 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N25; Fanout = 1; CLK Node = 'SW0_PULSE'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G6; Fanout = 8; COMB Node = 'SW0_PULSE~clkctrl'
+                Info: 3: + IC(0.992 ns) + CELL(0.537 ns) = 2.646 ns; Loc. = LCFF_X47_Y25_N27; Fanout = 3; REG Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[7]'
+                Info: Total cell delay = 1.536 ns ( 58.05 % )
+                Info: Total interconnect delay = 1.110 ns ( 41.95 % )
+            Info: - Longest clock path from clock "SW0_PULSE" to source register is 2.646 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N25; Fanout = 1; CLK Node = 'SW0_PULSE'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G6; Fanout = 8; COMB Node = 'SW0_PULSE~clkctrl'
+                Info: 3: + IC(0.992 ns) + CELL(0.537 ns) = 2.646 ns; Loc. = LCFF_X47_Y25_N13; Fanout = 3; REG Node = 'lpm_counter0:inst2|lpm_counter:lpm_counter_component|cntr_u2i:auto_generated|safe_q[0]'
+                Info: Total cell delay = 1.536 ns ( 58.05 % )
+                Info: Total interconnect delay = 1.110 ns ( 41.95 % )
+        Info: + Micro clock to output delay of source is 0.250 ns
+        Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "LCD_Display:inst1|CLK_COUNT_400HZ[9]" (data pin = "KEY3_ACLR", clock pin = "CLK_48Mhz") is 6.214 ns
+    Info: + Longest pin to register delay is 8.931 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 8; PIN Node = 'KEY3_ACLR'
+        Info: 2: + IC(6.452 ns) + CELL(0.438 ns) = 7.752 ns; Loc. = LCCOMB_X2_Y17_N22; Fanout = 20; COMB Node = 'LCD_Display:inst1|CLK_COUNT_400HZ[17]~312'
+        Info: 3: + IC(0.669 ns) + CELL(0.510 ns) = 8.931 ns; Loc. = LCFF_X2_Y18_N31; Fanout = 3; REG Node = 'LCD_Display:inst1|CLK_COUNT_400HZ[9]'
+        Info: Total cell delay = 1.810 ns ( 20.27 % )
+        Info: Total interconnect delay = 7.121 ns ( 79.73 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "CLK_48Mhz" to destination register is 2.681 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'CLK_48Mhz'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 20; COMB Node = 'CLK_48Mhz~clkctrl'
+        Info: 3: + IC(1.027 ns) + CELL(0.537 ns) = 2.681 ns; Loc. = LCFF_X2_Y18_N31; Fanout = 3; REG Node = 'LCD_Display:inst1|CLK_COUNT_400HZ[9]'
+        Info: Total cell delay = 1.536 ns ( 57.29 % )
+        Info: Total interconnect delay = 1.145 ns ( 42.71 % )
+Info: tco from clock "CLK_48Mhz" to destination pin "DATA_BUS[0]" through register "LCD_Display:inst1|DATA_BUS_VALUE[0]" is 11.734 ns
+    Info: + Longest clock path from clock "CLK_48Mhz" to source register is 4.746 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'CLK_48Mhz'
+        Info: 2: + IC(0.611 ns) + CELL(0.787 ns) = 2.397 ns; Loc. = LCFF_X1_Y17_N1; Fanout = 2; REG Node = 'LCD_Display:inst1|CLK_400HZ'
+        Info: 3: + IC(0.805 ns) + CELL(0.000 ns) = 3.202 ns; Loc. = CLKCTRL_G3; Fanout = 39; COMB Node = 'LCD_Display:inst1|CLK_400HZ~clkctrl'
+        Info: 4: + IC(1.007 ns) + CELL(0.537 ns) = 4.746 ns; Loc. = LCFF_X48_Y25_N11; Fanout = 2; REG Node = 'LCD_Display:inst1|DATA_BUS_VALUE[0]'
+        Info: Total cell delay = 2.323 ns ( 48.95 % )
+        Info: Total interconnect delay = 2.423 ns ( 51.05 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 6.738 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X48_Y25_N11; Fanout = 2; REG Node = 'LCD_Display:inst1|DATA_BUS_VALUE[0]'
+        Info: 2: + IC(4.096 ns) + CELL(2.642 ns) = 6.738 ns; Loc. = PIN_J1; Fanout = 0; PIN Node = 'DATA_BUS[0]'
+        Info: Total cell delay = 2.642 ns ( 39.21 % )
+        Info: Total interconnect delay = 4.096 ns ( 60.79 % )
+Info: th for register "LCD_Display:inst1|CHAR_COUNT[3]" (data pin = "KEY3_ACLR", clock pin = "CLK_48Mhz") is -2.609 ns
+    Info: + Longest clock path from clock "CLK_48Mhz" to destination register is 4.746 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'CLK_48Mhz'
+        Info: 2: + IC(0.611 ns) + CELL(0.787 ns) = 2.397 ns; Loc. = LCFF_X1_Y17_N1; Fanout = 2; REG Node = 'LCD_Display:inst1|CLK_400HZ'
+        Info: 3: + IC(0.805 ns) + CELL(0.000 ns) = 3.202 ns; Loc. = CLKCTRL_G3; Fanout = 39; COMB Node = 'LCD_Display:inst1|CLK_400HZ~clkctrl'
+        Info: 4: + IC(1.007 ns) + CELL(0.537 ns) = 4.746 ns; Loc. = LCFF_X48_Y25_N27; Fanout = 11; REG Node = 'LCD_Display:inst1|CHAR_COUNT[3]'
+        Info: Total cell delay = 2.323 ns ( 48.95 % )
+        Info: Total interconnect delay = 2.423 ns ( 51.05 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 7.621 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 8; PIN Node = 'KEY3_ACLR'
+        Info: 2: + IC(6.099 ns) + CELL(0.660 ns) = 7.621 ns; Loc. = LCFF_X48_Y25_N27; Fanout = 11; REG Node = 'LCD_Display:inst1|CHAR_COUNT[3]'
+        Info: Total cell delay = 1.522 ns ( 19.97 % )
+        Info: Total interconnect delay = 6.099 ns ( 80.03 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 156 megabytes
+    Info: Processing ended: Fri Jan 24 19:09:10 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

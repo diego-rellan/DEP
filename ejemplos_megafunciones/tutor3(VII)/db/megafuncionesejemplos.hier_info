@@ -1,0 +1,317 @@
+|megafuncionesejemplos
+overflow <= lpm_add_sub0:inst.overflow
+add_sub => lpm_add_sub0:inst.add_sub
+dataa[0] => lpm_add_sub0:inst.dataa[0]
+dataa[0] => lpm_compare0:inst1.dataa[0]
+dataa[0] => lpm_mult0:inst7.dataa[0]
+dataa[1] => lpm_add_sub0:inst.dataa[1]
+dataa[1] => lpm_compare0:inst1.dataa[1]
+dataa[1] => lpm_mult0:inst7.dataa[1]
+datab[0] => lpm_add_sub0:inst.datab[0]
+datab[0] => lpm_compare0:inst1.datab[0]
+datab[0] => lpm_mult0:inst7.datab[0]
+datab[1] => lpm_add_sub0:inst.datab[1]
+datab[1] => lpm_compare0:inst1.datab[1]
+datab[1] => lpm_mult0:inst7.datab[1]
+cout <= lpm_add_sub0:inst.cout
+aeb <= lpm_compare0:inst1.aeb
+eq0 <= lpm_decode1:inst4.eq0
+data[0] => lpm_decode1:inst4.data[0]
+data[1] => lpm_decode1:inst4.data[1]
+data[2] => lpm_decode1:inst4.data[2]
+data[3] => lpm_decode1:inst4.data[3]
+eq1 <= lpm_decode1:inst4.eq1
+eq2 <= lpm_decode1:inst4.eq2
+eq4 <= lpm_decode1:inst4.eq4
+eq5 <= lpm_decode1:inst4.eq5
+eq6 <= lpm_decode1:inst4.eq6
+eq7 <= lpm_decode1:inst4.eq7
+eq8 <= lpm_decode1:inst4.eq8
+eq9 <= lpm_decode1:inst4.eq9
+eq10 <= lpm_decode1:inst4.eq10
+eq11 <= lpm_decode1:inst4.eq11
+eq12 <= lpm_decode1:inst4.eq12
+eq13 <= lpm_decode1:inst4.eq13
+eq14 <= lpm_decode1:inst4.eq14
+eq15 <= lpm_decode1:inst4.eq15
+eq3 <= lpm_decode1:inst4.eq3
+result[0] <= lpm_add_sub0:inst.result[0]
+result[1] <= lpm_add_sub0:inst.result[1]
+resultm[0] <= lpm_mult0:inst7.result[0]
+resultm[1] <= lpm_mult0:inst7.result[1]
+resultm[2] <= lpm_mult0:inst7.result[2]
+resultm[3] <= lpm_mult0:inst7.result[3]
+
+
+|megafuncionesejemplos|lpm_add_sub0:inst
+add_sub => lpm_add_sub:LPM_ADD_SUB_component.add_sub
+dataa[0] => lpm_add_sub:LPM_ADD_SUB_component.dataa[0]
+dataa[1] => lpm_add_sub:LPM_ADD_SUB_component.dataa[1]
+datab[0] => lpm_add_sub:LPM_ADD_SUB_component.datab[0]
+datab[1] => lpm_add_sub:LPM_ADD_SUB_component.datab[1]
+cout <= lpm_add_sub:LPM_ADD_SUB_component.cout
+overflow <= lpm_add_sub:LPM_ADD_SUB_component.overflow
+result[0] <= lpm_add_sub:LPM_ADD_SUB_component.result[0]
+result[1] <= lpm_add_sub:LPM_ADD_SUB_component.result[1]
+
+
+|megafuncionesejemplos|lpm_add_sub0:inst|lpm_add_sub:LPM_ADD_SUB_component
+dataa[0] => add_sub_kth:auto_generated.dataa[0]
+dataa[1] => add_sub_kth:auto_generated.dataa[1]
+datab[0] => add_sub_kth:auto_generated.datab[0]
+datab[1] => add_sub_kth:auto_generated.datab[1]
+cin => ~NO_FANOUT~
+add_sub => add_sub_kth:auto_generated.add_sub
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= add_sub_kth:auto_generated.result[0]
+result[1] <= add_sub_kth:auto_generated.result[1]
+cout <= add_sub_kth:auto_generated.cout
+overflow <= add_sub_kth:auto_generated.overflow
+
+
+|megafuncionesejemplos|lpm_add_sub0:inst|lpm_add_sub:LPM_ADD_SUB_component|add_sub_kth:auto_generated
+add_sub => cin_wire.IN0
+add_sub => datab_node[1].IN0
+add_sub => _.IN0
+cout <= carry_eqn[1].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => carry_eqn[0].IN0
+dataa[0] => _.IN0
+dataa[0] => sum_eqn[0].IN0
+dataa[1] => carry_eqn[1].IN0
+dataa[1] => _.IN0
+dataa[1] => sum_eqn[1].IN0
+datab[0] => datab_node[0].IN1
+datab[1] => datab_node[1].IN1
+overflow <= overflow.DB_MAX_OUTPUT_PORT_TYPE
+result[0] <= sum_eqn[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= sum_eqn[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|megafuncionesejemplos|lpm_compare0:inst1
+dataa[0] => lpm_compare:LPM_COMPARE_component.dataa[0]
+dataa[1] => lpm_compare:LPM_COMPARE_component.dataa[1]
+datab[0] => lpm_compare:LPM_COMPARE_component.datab[0]
+datab[1] => lpm_compare:LPM_COMPARE_component.datab[1]
+aeb <= lpm_compare:LPM_COMPARE_component.aeb
+
+
+|megafuncionesejemplos|lpm_compare0:inst1|lpm_compare:LPM_COMPARE_component
+dataa[0] => cmpr_7hg:auto_generated.dataa[0]
+dataa[1] => cmpr_7hg:auto_generated.dataa[1]
+datab[0] => cmpr_7hg:auto_generated.datab[0]
+datab[1] => cmpr_7hg:auto_generated.datab[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+alb <= <GND>
+aeb <= cmpr_7hg:auto_generated.aeb
+agb <= <GND>
+aleb <= <GND>
+aneb <= <GND>
+ageb <= <GND>
+
+
+|megafuncionesejemplos|lpm_compare0:inst1|lpm_compare:LPM_COMPARE_component|cmpr_7hg:auto_generated
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => aneb_result_wire[0].IN0
+dataa[1] => aneb_result_wire[0].IN0
+datab[0] => aneb_result_wire[0].IN1
+datab[1] => aneb_result_wire[0].IN1
+
+
+|megafuncionesejemplos|lpm_decode1:inst4
+data[0] => lpm_decode:LPM_DECODE_component.data[0]
+data[1] => lpm_decode:LPM_DECODE_component.data[1]
+data[2] => lpm_decode:LPM_DECODE_component.data[2]
+data[3] => lpm_decode:LPM_DECODE_component.data[3]
+eq0 <= lpm_decode:LPM_DECODE_component.eq[0]
+eq1 <= lpm_decode:LPM_DECODE_component.eq[1]
+eq10 <= lpm_decode:LPM_DECODE_component.eq[10]
+eq11 <= lpm_decode:LPM_DECODE_component.eq[11]
+eq12 <= lpm_decode:LPM_DECODE_component.eq[12]
+eq13 <= lpm_decode:LPM_DECODE_component.eq[13]
+eq14 <= lpm_decode:LPM_DECODE_component.eq[14]
+eq15 <= lpm_decode:LPM_DECODE_component.eq[15]
+eq2 <= lpm_decode:LPM_DECODE_component.eq[2]
+eq3 <= lpm_decode:LPM_DECODE_component.eq[3]
+eq4 <= lpm_decode:LPM_DECODE_component.eq[4]
+eq5 <= lpm_decode:LPM_DECODE_component.eq[5]
+eq6 <= lpm_decode:LPM_DECODE_component.eq[6]
+eq7 <= lpm_decode:LPM_DECODE_component.eq[7]
+eq8 <= lpm_decode:LPM_DECODE_component.eq[8]
+eq9 <= lpm_decode:LPM_DECODE_component.eq[9]
+
+
+|megafuncionesejemplos|lpm_decode1:inst4|lpm_decode:LPM_DECODE_component
+data[0] => decode_c8f:auto_generated.data[0]
+data[1] => decode_c8f:auto_generated.data[1]
+data[2] => decode_c8f:auto_generated.data[2]
+data[3] => decode_c8f:auto_generated.data[3]
+enable => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+eq[0] <= decode_c8f:auto_generated.eq[0]
+eq[1] <= decode_c8f:auto_generated.eq[1]
+eq[2] <= decode_c8f:auto_generated.eq[2]
+eq[3] <= decode_c8f:auto_generated.eq[3]
+eq[4] <= decode_c8f:auto_generated.eq[4]
+eq[5] <= decode_c8f:auto_generated.eq[5]
+eq[6] <= decode_c8f:auto_generated.eq[6]
+eq[7] <= decode_c8f:auto_generated.eq[7]
+eq[8] <= decode_c8f:auto_generated.eq[8]
+eq[9] <= decode_c8f:auto_generated.eq[9]
+eq[10] <= decode_c8f:auto_generated.eq[10]
+eq[11] <= decode_c8f:auto_generated.eq[11]
+eq[12] <= decode_c8f:auto_generated.eq[12]
+eq[13] <= decode_c8f:auto_generated.eq[13]
+eq[14] <= decode_c8f:auto_generated.eq[14]
+eq[15] <= decode_c8f:auto_generated.eq[15]
+
+
+|megafuncionesejemplos|lpm_decode1:inst4|lpm_decode:LPM_DECODE_component|decode_c8f:auto_generated
+data[0] => w_anode102w[1].IN1
+data[0] => w_anode112w[1].IN0
+data[0] => w_anode122w[1].IN1
+data[0] => w_anode132w[1].IN0
+data[0] => w_anode142w[1].IN1
+data[0] => w_anode152w[1].IN0
+data[0] => w_anode162w[1].IN1
+data[0] => w_anode21w[1].IN1
+data[0] => w_anode31w[1].IN0
+data[0] => w_anode41w[1].IN1
+data[0] => w_anode4w[1].IN0
+data[0] => w_anode51w[1].IN0
+data[0] => w_anode61w[1].IN1
+data[0] => w_anode71w[1].IN0
+data[0] => w_anode81w[1].IN1
+data[0] => w_anode91w[1].IN0
+data[1] => w_anode102w[2].IN0
+data[1] => w_anode112w[2].IN1
+data[1] => w_anode122w[2].IN1
+data[1] => w_anode132w[2].IN0
+data[1] => w_anode142w[2].IN0
+data[1] => w_anode152w[2].IN1
+data[1] => w_anode162w[2].IN1
+data[1] => w_anode21w[2].IN0
+data[1] => w_anode31w[2].IN1
+data[1] => w_anode41w[2].IN1
+data[1] => w_anode4w[2].IN0
+data[1] => w_anode51w[2].IN0
+data[1] => w_anode61w[2].IN0
+data[1] => w_anode71w[2].IN1
+data[1] => w_anode81w[2].IN1
+data[1] => w_anode91w[2].IN0
+data[2] => w_anode102w[3].IN0
+data[2] => w_anode112w[3].IN0
+data[2] => w_anode122w[3].IN0
+data[2] => w_anode132w[3].IN1
+data[2] => w_anode142w[3].IN1
+data[2] => w_anode152w[3].IN1
+data[2] => w_anode162w[3].IN1
+data[2] => w_anode21w[3].IN0
+data[2] => w_anode31w[3].IN0
+data[2] => w_anode41w[3].IN0
+data[2] => w_anode4w[3].IN0
+data[2] => w_anode51w[3].IN1
+data[2] => w_anode61w[3].IN1
+data[2] => w_anode71w[3].IN1
+data[2] => w_anode81w[3].IN1
+data[2] => w_anode91w[3].IN0
+data[3] => enable_wire1.IN0
+data[3] => w_anode102w[1].IN0
+data[3] => w_anode112w[1].IN0
+data[3] => w_anode122w[1].IN0
+data[3] => w_anode132w[1].IN0
+data[3] => w_anode142w[1].IN0
+data[3] => w_anode152w[1].IN0
+data[3] => w_anode162w[1].IN0
+data[3] => w_anode91w[1].IN0
+eq[0] <= w_anode4w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[1] <= w_anode21w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[2] <= w_anode31w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[3] <= w_anode41w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[4] <= w_anode51w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[5] <= w_anode61w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[6] <= w_anode71w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[7] <= w_anode81w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[8] <= w_anode91w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[9] <= w_anode102w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[10] <= w_anode112w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[11] <= w_anode122w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[12] <= w_anode132w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[13] <= w_anode142w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[14] <= w_anode152w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[15] <= w_anode162w[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|megafuncionesejemplos|lpm_mult0:inst7
+dataa[0] => lpm_mult:lpm_mult_component.dataa[0]
+dataa[1] => lpm_mult:lpm_mult_component.dataa[1]
+datab[0] => lpm_mult:lpm_mult_component.datab[0]
+datab[1] => lpm_mult:lpm_mult_component.datab[1]
+result[0] <= lpm_mult:lpm_mult_component.result[0]
+result[1] <= lpm_mult:lpm_mult_component.result[1]
+result[2] <= lpm_mult:lpm_mult_component.result[2]
+result[3] <= lpm_mult:lpm_mult_component.result[3]
+
+
+|megafuncionesejemplos|lpm_mult0:inst7|lpm_mult:lpm_mult_component
+dataa[0] => multcore:mult_core.dataa[0]
+dataa[1] => multcore:mult_core.dataa[1]
+datab[0] => multcore:mult_core.datab[0]
+datab[1] => multcore:mult_core.datab[1]
+sum[0] => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= altshift:external_latency_ffs.result[0]
+result[1] <= altshift:external_latency_ffs.result[1]
+result[2] <= altshift:external_latency_ffs.result[2]
+result[3] <= altshift:external_latency_ffs.result[3]
+
+
+|megafuncionesejemplos|lpm_mult0:inst7|lpm_mult:lpm_mult_component|multcore:mult_core
+dataa[0] => result[0].IN0
+dataa[0] => _.IN0
+dataa[0] => _.IN0
+dataa[0] => _.IN0
+dataa[1] => _.IN0
+dataa[1] => _.IN0
+dataa[1] => _.IN0
+dataa[1] => _.IN0
+dataa[1] => _.IN0
+datab[0] => result[0].IN1
+datab[0] => _.IN1
+datab[0] => _.IN1
+datab[0] => _.IN1
+datab[1] => _.IN1
+datab[1] => _.IN1
+datab[1] => _.IN1
+datab[1] => _.IN1
+datab[1] => _.IN1
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= result[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|megafuncionesejemplos|lpm_mult0:inst7|lpm_mult:lpm_mult_component|altshift:external_latency_ffs
+data[0] => result[0].DATAIN
+data[1] => result[1].DATAIN
+data[2] => result[2].DATAIN
+data[3] => result[3].DATAIN
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= data[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
